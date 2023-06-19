@@ -1,0 +1,83 @@
+
+**************************************
+SECCION 2 : Reforzamineto sobre React
+**************************************
+
+Temas:
+
+- TypeScript con los principales Hooks de React
+- Pequeñas animaciones con GreenSock
+- Timelines
+- Custom Hooks
+- Referencias a elementos del DOM
+- Objetos como estado
+- Interfaces
+- Types
+- Reducers
+- Actions Creators
+
+
+Playlist de Typescript: https://www.youtube.com/playlist?list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M
+
+************************************
+
+Inicio del proyecto:
+
+npx create-react-app bases --template typescript
+yarn start
+
+Hacer cambios en:
+index.css
+App.tsx
+
+************************************
+
+useEffect - CounterEffect.tsx
+Se usó el hook con contadores y una función de Math.min
+
+/*Mi solución para que no pase de 10
+            if (counter >= MAXIMUN_COUT) return;
+            setCounter( prev => prev + 1 );*/
+
+Agregar animación: GreenSock
+yarn add gsap
+Tuve que hacer npm install para solucionar errores
+Se agregó animación en CounterEffect.tsx
+
+Se agregó useRef() para mantener referencia a un elemento.
+const counterElement = useRef<HTMLHeadingElement>(null); //Se usó este tipado para evitar error en tsx
+
+//Si se hace de esta manera o agregando clase de css afecta otros elementos h2, incluso de otros componentes.
+/*gsap.to('h2', { y:-10, duration:0.2, ease:'ease.out' }).then( () => {
+    gsap.to('h2', { y:0, duration:1, ease:'bounce.out' })*/
+
+//Esta forma si funciona:
+/*gsap.to(counterElement.current, { y:-10, duration:0.2, ease:'ease.out' }).then( () => {
+gsap.to(counterElement.current, { y:0, duration:1, ease:'bounce.out' })*/
+
+/*timeline.to(counterElement.current, { y: -10, duration: 0.2, ease: 'ease.out' });
+timeline.to(counterElement.current, { y: 0, duration: 1, ease: 'bounce.out' });*/
+
+************************************
+
+CounterHook.tsx => El mismo componente pero con un customHook para más orden
+Crear: /src/hooks/useCounter.ts
+Quedó bastante reducido y entendible el componente con el uso del customHook.
+
+useLayoutEffect: para que solo se ejecute una vez cuando el componente es creado.
+
+************************************
+
+CounterReducer.tsx || useReducer()
+Se realizó el ejemplo del increaseBy con un reducer.
+Se tiene el tipado para el action, initialState y las acciones.
+
+Se hizo la optimización del código en todo lo que está en /src/counter-reducer
+Se usó ActionCreators en actions.ts
+
+************************************
+
+************************************
+
+************************************
+
