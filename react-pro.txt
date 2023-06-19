@@ -75,9 +75,30 @@ Se tiene el tipado para el action, initialState y las acciones.
 Se hizo la optimización del código en todo lo que está en /src/counter-reducer
 Se usó ActionCreators en actions.ts
 
-************************************
+**********************************************
+SECCION 3 : Construcción del proyecto inicial
+**********************************************
+
+npx create-react-app react-app --template typescript
+
+index.css → usar código del gist
+
+borrar archivos innecesarios:
+App.css
+App.test.tsx
+
+dejar con un fragmento y un h1 el App.tsx
+
+yarn start
 
 ************************************
+
+Configurar react router v6 : https://reactrouter.com/en/main
+
+yarn add react-router-dom@6
+
+Crear: routes/Navigation.tsx
+Se añadió validación con isActive para estilizar la ruta activa
 
 ************************************
 
