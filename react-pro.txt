@@ -100,5 +100,72 @@ yarn add react-router-dom@6
 Crear: routes/Navigation.tsx
 Se añadió validación con isActive para estilizar la ruta activa
 
+
+******************************
+SECCION 4 : LazyLoad - Chunks
+******************************
+
+lazyload: carga de módulos, componentes a demanda
+chunk: parte pequeña de la aplicación de react
+
+Temas:
+- Aplicar Lazy Load en cada Componente
+- Aplicar Lazy Load por módulo
+
+Hacer fork si fuera necesario : https://github.com/Klerith/react-adv/tree/main-router-v6
+
 ************************************
+
+Crear el módulo: /src/01-lazyload/
+se modificó src/routes/Navigation.tsx con el archivo routes.ts (rutas dinámicas)
+
+************************************
+
+Lazyload y Suspense
+
+Se aplicaron cambios en routes.ts
+Se agrega export default en los componentes para evitar error con el lazy() de React
+
+se mantiene con ambas para tener flexibilidad
+Component: LazyExoticComponent<() => JSX.Element> | JSXComponent;
+
+En Navigation.tsx se agregó el Suspense para que muestre un mensaje mientras carga.
+Se ve que dibuja los componentes cuando son llamados y no antes!
+Renombrar los chunks con los comentarios no me funcionó en el network del navegador
+
+************************************
+
+Nested Lazy Routes
+
+/src/01-lazyload/layout/LazyLayout.tsx
+cambios en route.ts
+se manejan las rutas que pasan por lazylayout con el comodín *
+Este ejemplo es para simular la carga de todo un módulo.
+
+************************************
+
+
+
+
+
+************************************
+
+
+
+
+
+************************************
+
+
+
+
+
+************************************
+
+
+
+
+
+
+
 
