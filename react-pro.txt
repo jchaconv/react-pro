@@ -142,7 +142,12 @@ cambios en route.ts
 se manejan las rutas que pasan por lazylayout con el comodín *
 Este ejemplo es para simular la carga de todo un módulo.
 
-************************************
+
+****************************************************************
+SECCION 5: Patrones de componentes - Compound Component Pattern
+****************************************************************
+
+
 
 
 
