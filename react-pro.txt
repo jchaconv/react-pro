@@ -147,9 +147,36 @@ Este ejemplo es para simular la carga de todo un módulo.
 SECCION 5: Patrones de componentes - Compound Component Pattern
 ****************************************************************
 
+Crear /src/02-component-pattern y todo lo que va dentro
+La imagen del cafe ponerla en /public
+
+//Así volvemos opcional el img
+export const ProductImage = ({ img = '' }) => {
+
+Componente básico tradicional=> ProductCard.tsx , se usó useProduct()
+
+{/* <img className={ styles.productImg } src="./coffee-mug.png" alt="Coffee Mug" /> */}
+
+//Así volvemos obligatorio el title, definimos el tipo de objeto aquí para no crear interfaz
 
 
+/*
+interface ProductButtonsProps {
+    counter: number;
+    increaseBy: (value: number) => void
+}
+*/
 
+//export const ProductButtons = ({counter, increaseBy}: ProductButtonsProps) => {
+
+Recibir props al componente hijo
+ShoppingPage.tsx y ProductCard.tsx
+
+Este pattern sirve para tener mayor control del componente porque el c.hijo
+ya tiene seteado todos los estilos, propiedades y eso no es muy óptimo.
+
+Todos los cambios de refactorización se realizaron en ProductCard.tsx
+Se usó useContext en el ProductCard.tsx, en los diferentes componentes.
 
 
 
