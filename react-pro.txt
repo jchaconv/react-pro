@@ -179,12 +179,28 @@ Todos los cambios de refactorización se realizaron en ProductCard.tsx
 Se usó useContext en el ProductCard.tsx, en los diferentes componentes.
 
 
+*******************************************************
+SECCION 6: Patrones de componentes - Extensible styles
+*******************************************************
 
-************************************
+Para poder pasar estilos a los componentes.
 
+Custom Classname:
+*****************
 
+Crear /styles/custom-styles.css
+Modificaciones en ShoppingPage.tsx
 
+Se añadió prop en la interface de ProductCard.tsx
 
+En resumen se agregó className como prop para:
+-ProductCard.tsx
+-ProductTitle.tsx
+-ProductImage.tsx
+
+Ejemplo:
+<ProductTitle className="text-white text-bold" /> //Enviando más de una clase
+className={ `${ styles.productImg } ${ className }` }
 
 ************************************
 
